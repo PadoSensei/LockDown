@@ -102,12 +102,13 @@ function newMessage() {
 function newMessage() {
   if (todoItems.length === 0) {
     output.innerText = "You need to add some ideas first.";
-  }
-  let undone = todoItems.filter((item) => item.checked !== true);
-  if (undone.length === 0) {
-    output.innerText = `You've done everything! Great work! Add more ideas and keep going!`;
   } else {
-    let randomItem = undone[Math.floor(Math.random() * undone.length)];
-    output.innerText = `I think you should get up and ${randomItem.text}.`;
+    let undone = todoItems.filter((item) => item.checked !== true);
+    if (undone.length === 0) {
+      output.innerText = `You've done everything! Great work! Add more ideas and keep going!`;
+    } else {
+      let randomItem = undone[Math.floor(Math.random() * undone.length)];
+      output.innerText = `I think you should get up and ${randomItem.text}.`;
+    }
   }
 }
